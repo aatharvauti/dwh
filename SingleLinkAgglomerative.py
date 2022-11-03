@@ -27,8 +27,9 @@ plt.title('Plotting of Points',fontsize=16,color='purple')
 
 for j in data.itertuples():
     plt.annotate(j.Index, (j.x, j.y), fontsize=15)
-    dist = pd.DataFrame(squareform(pdist(data[['x','y']]), 'euclidean'),
-    columns=data.index.values, index=data.index.values)
+
+dist = pd.DataFrame(squareform(pdist(data[['x','y']]), 'euclidean'),
+columns=data.index.values, index=data.index.values)
 
 #Displaying the dendrogram
 plt.figure(figsize=(12,5))
